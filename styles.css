@@ -1,0 +1,235 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  :root {
+    --kinda-blue-color: #30496B;
+    --background-color-1: #2E2E2E;
+    --background-color-2: #252c8a;
+  }
+  
+  html {
+    font-size: 100%;
+  }
+  
+  body {
+    background-color: var(--background-color-1);
+    font-family: Ubuntu, sans-serif;
+  }
+  
+  header {
+    width: 100%;
+    height: 12vh;
+    position: fixed;
+    top: 0;
+  }
+  
+  #navbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: var(--kinda-blue-color);
+    padding: 20px;
+    height: 100%;
+  }
+  
+  #navbar ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+  }
+  
+  
+  a {
+      text-decoration: none;
+      color: white;
+  }
+  
+  .nav-link {
+    font-size: 1.3rem;
+    padding: 1.2rem;
+    height: 100%;
+  }
+  
+  .nav-link:hover {
+    background-color: #bbb;
+  }
+  
+  section {
+    /* to avoid the navbar overlap sections content when navigating withe the nav-links */
+    padding-top: 12vh;
+  }
+  
+  
+  
+  #welcome-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  #welcome-section h1 {
+    color: white;
+    font-size: 2.5rem;
+  }
+  
+  #welcome-section p {
+    color: var(--kinda-blue-color);
+    font-size: 1.6rem;
+    animation: changeColor 3s infinite;
+  }
+  
+  #projects {
+    background-color: var(--background-color-2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #projects h2 {
+    color: white;
+    font-size: 1.9rem;
+    text-align: center;
+    margin: 40px;
+    padding: 20px;
+    border-bottom: 2px white solid;
+  }
+  
+  #projects-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .project {
+    width: 30%;
+    min-width: 300px;
+    min-height: 300px;
+    box-shadow: 1px 1px 4px black;
+    background-color: var(--background-color-1);
+  }
+  
+  .project a {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .project-tile {
+    padding: 10px;
+    margin: 10px;
+  }
+  
+  .project-tile:hover::before {
+    content: "< ";
+    color: orange;
+  }
+  
+  .project-tile:hover::after {
+    content: " />";
+    color: orange;
+  }
+  
+  .project-img {
+    width: 100%;
+    min-height: 250px;
+    object-fit: cover;
+  }
+  
+  #show-all-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--background-color-1);
+    padding: 14px;
+    border-radius: 6px;
+    font-size: 1.3rem;
+    margin: 40px;
+    transition: background-color 1000ms ease-in-out;
+  }
+  
+  #show-all-button:hover {
+    background-color: #800000;
+    animation: moveIcon 3s infinite;
+  }
+  
+  #contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    gap: 30px;
+  }
+  
+  #contact h2 {
+    color: white;
+    font-size: 2rem;
+  }
+  
+  #contact-links-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+  
+  .contact-link {
+    position: relative;
+    font-size: 1.2rem;
+    transition: top 1000ms ease-in-out;
+    top: 0;
+  }
+  
+  .contact-link:hover {
+    top: 10px;
+  }
+  
+  footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+    border-top: 3px solid #800000;
+    color: white;
+  }
+  
+  
+  @media (max-width: 400px) {
+    html {
+      font-size: 75%;
+    }
+  }
+  
+  @keyframes moveIcon {
+    0%{
+      gap: 10px;
+    }
+  
+    100% {
+      gap: 25px;
+    }
+  }
+  
+  @keyframes changeColor {
+    0% {
+      color: var(--kinda-blue-color);
+    }
+  
+    50% {
+      color: white;
+    }
+  
+    100% {
+      color: var(--kinda-blue-color);
+    }
+  }
